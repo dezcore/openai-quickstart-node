@@ -1,0 +1,15 @@
+version: '3.4'
+
+services:
+  openai:
+    image: openai
+    ports:
+      - "3000:3000"
+    working_dir: /app
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    volumes:
+      - .:/app
+      - '/app/node_modules'
+
